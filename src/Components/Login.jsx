@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { toast } from "react-toastify";
+import EmailIcon from '@mui/icons-material/Email';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const Login = () => {
   let navigate = useNavigate();
@@ -11,6 +14,7 @@ const Login = () => {
     password: "",
     name: "",
   });
+  let [visibilty,setvisibility] = useState(false)
 
   let toastStyle = {
     position: "top-right",
@@ -92,10 +96,11 @@ const Login = () => {
               <label>Email</label>
               <span>*</span>
             </div>
+            <div className="icon"><EmailIcon/></div>
           </div>
           <div className="inputDiv right">
             <input
-              type="password"
+              type={visibilty ? 'text' : 'password'}
               className="input"
               required="required"
               value={user.password}
@@ -105,6 +110,7 @@ const Login = () => {
               <label>Password</label>
               <span>*</span>
             </div>
+            <div className="icon" onClick={()=>setvisibility(prev => !prev)}>{visibilty ? <VisibilityIcon/> : <VisibilityOffIcon/>}</div>
           </div>
           <button onClick={checker} className="createBtn right">
             Login
@@ -154,6 +160,11 @@ let LoginContainer = styled.div`
         color: red;
       }
     }
+    .icon{
+      position: absolute;
+      right: 24rem;
+      top: 0.5rem;
+    }
     .input {
       min-width: 70%;
       border: 1px solid #cbcbcb;
@@ -178,6 +189,11 @@ let LoginContainer = styled.div`
     .input,
     button {
       min-width: 90vw !important;
+    }
+    .icon{
+      position: absolute;
+      right: 1px;
+      top: 0;
     }
   }
 `;
