@@ -121,7 +121,7 @@ let LoginContainer = styled.div`
   background-color: #f7f8f9;
   min-height: 100vh;
   min-width: 100vw;
-  padding: 2rem;
+  padding: 3rem;
   .container {
     display: flex;
     flex-direction: column;
@@ -174,9 +174,10 @@ let LoginContainer = styled.div`
   }
 
   @media screen and (max-width: 576px) {
+    padding: 1rem;
     .input,
     button {
-      min-width: 90% !important;
+      min-width: 90vw !important;
     }
   }
 `;

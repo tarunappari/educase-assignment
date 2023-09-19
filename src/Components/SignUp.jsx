@@ -206,8 +206,7 @@ let SignUpContainer = styled.div`
   background-color: #f7f8f9;
   min-height: 100vh;
   min-width: 100vw;
-  padding: 1rem;
-  padding-left: 4rem;
+  padding: 1.5rem;
   
   h1 {
     margin-bottom: 1rem;
@@ -269,9 +268,10 @@ let SignUpContainer = styled.div`
   }
 
   @media screen and (max-width: 576px) {
+    padding: 1rem;
     .input,
     button {
-      min-width: 90% !important;
+      min-width: 90vw !important;
     }
   }
 `;
