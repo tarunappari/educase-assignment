@@ -164,6 +164,7 @@ let LoginContainer = styled.div`
       position: absolute;
       right: 24rem;
       top: 0.5rem;
+      opacity: 0.8;
     }
     .input {
       min-width: 70%;
@@ -192,7 +193,7 @@ let LoginContainer = styled.div`
     }
     .icon{
       position: absolute;
-      right: 1px;
+      left: 18.5rem;
       top: 0;
     }
   }
