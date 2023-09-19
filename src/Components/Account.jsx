@@ -9,10 +9,10 @@ const Account = () => {
     email: "",
   });
 
-  useEffect(() => {
+  useEffect(()=>{
     let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    setUser({ ...currentUser });
-  }, []);
+    setUser({ ...currentUser })
+  },[]) 
 
   return (
     <AccountContainer>
