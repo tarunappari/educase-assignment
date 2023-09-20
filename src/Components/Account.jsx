@@ -9,6 +9,9 @@ const Account = () => {
     email: "",
   });
 
+  //here we will be retrieving the current user from localstorage which has the user details 
+  //by useEffect to minimize the re-renders
+  //and didplaying user details in the ui
   useEffect(()=>{
     let currentUser = JSON.parse(localStorage.getItem("currentUser"));
     setUser({ ...currentUser })

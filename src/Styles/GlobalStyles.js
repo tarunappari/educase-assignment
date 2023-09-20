@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+//this file is used for styling part
+
 const GlobalStyles = createGlobalStyle`
       *{
         margin: 0;

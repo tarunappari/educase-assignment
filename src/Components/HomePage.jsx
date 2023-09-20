@@ -3,6 +3,10 @@ import styled from "styled-components";
 import image from "../Images/homeImage.webp";
 
 const HomePage = () => {
+
+  //in this component im navigating the user o login and signup pages based on 
+  //clicking the buttons
+  
   let navigate = useNavigate();
 
   return (

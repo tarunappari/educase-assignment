@@ -9,6 +9,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 const Login = () => {
   let navigate = useNavigate();
 
+  // initialized user to collect user info login info 
   let [user, setUser] = useState({
     email: "",
     password: "",
@@ -27,6 +28,7 @@ const Login = () => {
     theme: "dark",
   };
 
+  //this function is used for validation check
   function checker(event) {
     event.preventDefault();
 
@@ -35,14 +37,22 @@ const Login = () => {
       return;
     }
 
+    // we are retreiving the users from localstorage if present else users will be false and 
+    //user will be navigated to signup page
     let users = JSON.parse(localStorage.getItem("users")) || false;
 
+    //if users array is present in localstorage then im checking if curent user is matching or not
+    //by iterating over the users array
     if (users) {
       let flag = true;
       users.forEach((item) => {
         if (item.email === user.email) {
           flag = false;
           if (item.password === user.password) {
+
+            //if email and password macthes then im saving the currentuser details and navigating him to 
+            //account page else navigating signup page 
+            //if password didnt matches the im throwing error that indicates incorrect password
             let currentUser = {
               name: item.name,
               email: item.email,
@@ -58,7 +68,10 @@ const Login = () => {
             return;
           }
         }
-      });
+      })
+
+      //if there is no email match in users array that means current user didnt have an account
+      //so navigating to the signup page
       if (flag) {
         toast.error("You didnt have an account Signup please", toastStyle);
         setTimeout(() => {

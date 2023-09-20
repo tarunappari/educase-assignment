@@ -27,6 +27,7 @@ const SignUp = () => {
     theme: "dark",
   };
 
+  //this is the validation check function
   function checker(event) {
     event.preventDefault();
     if (
@@ -50,8 +51,12 @@ const SignUp = () => {
       return;
     }
 
+    //if there is any users then we will get that from localstorage or else will be assigning and empty array 
+    //to users 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
+    //we will be iterating over the array and checks the emails if we get any matched eemail that means
+    //user has an acount so will be naviagted to login page
     let flag = true;
     users.forEach((item) => {
       if (item.email === user.email) {
@@ -59,6 +64,8 @@ const SignUp = () => {
       }
     });
 
+    //else will be pushing current user to users array and stoing it in local storage
+    //else will be navigating to login page
     if (flag) {
       users.push(user);
 
