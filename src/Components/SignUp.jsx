@@ -47,7 +47,8 @@ const SignUp = () => {
     }
 
     if (user.password !== confirmPassword) {
-      toast.warn("Passwords didnt matched", toastStyle);
+      toast.warn("Passwords didnt matched", toastStyle)
+      setConfirmPassword('')
       return;
     }
 

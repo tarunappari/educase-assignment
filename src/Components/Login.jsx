@@ -65,6 +65,7 @@ const Login = () => {
             return;
           } else {
             toast.error("Incorrect Password", toastStyle);
+            setUser({...user,password:''})
             return;
           }
         }
