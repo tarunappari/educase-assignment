@@ -207,7 +207,7 @@ let LoginContainer = styled.div`
     }
     .icon{
       position: absolute;
-      left: 18.5rem;
+      left: 19rem;
       top: 0;
     }
   }
